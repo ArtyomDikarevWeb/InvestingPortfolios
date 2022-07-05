@@ -116,7 +116,7 @@ function getCryptocurrencyCost(CryptocurrencyInfo){
 			summ = 0
 			let binanceUniqueId = JSON.parse(event.data).data.s.toLowerCase();
 			let CryptocurrencyAmount = document.querySelector(`p.crypto__amount[data-uniq-id="${binanceUniqueId.replace('usdt', '')}"]`).textContent;
-			let activeSum = (+JSON.parse(event.data).data.p) * (+(CryptocurrencyAmount.replace(' шт.', '')));
+			let activeSum = (+JSON.parse(event.data).data.p) * (+parseFloat(CryptocurrencyAmount));
 
 			activeSum = activeSum.toFixed(7);
 
